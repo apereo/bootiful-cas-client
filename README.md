@@ -6,7 +6,7 @@ It could be used as a template to build more complex CAS-enabled Spring Boot app
 
 ## Getting Started
 
-* Make sure you have Java 8 installed (it won't work on Java versions less than 8)
+* Make sure you have Java 8 (at minimum) or Java 11 installed (it won't work on Java versions less than 8)
 
 * Clone this repository
 
