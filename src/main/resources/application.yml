@@ -1,16 +1,18 @@
 cas:
   #Required properties
-  server-url-prefix: https://casserver.herokuapp.com/cas
-  server-login-url: https://casserver.herokuapp.com/cas/login
+  server-url-prefix: https://localhost:8443/cas
+  server-login-url: https://localhost:8443/cas/login
 
   
-  client-host-url: https://mmoayyed.unicon.net:8444/
+  client-host-url: https://localhost:8444/
 
   #Optional properties
   authentication-url-patterns: [/protected, /protected2, /json]
   validation-url-patterns: [/protected, /protected2, /json]
   request-wrapper-url-patterns: [/protected, /protected2, /json]
   assertion-thread-local-url-patterns: [/*]
+  single-logout:
+    enabled: true
 
   #One of CAS3, CAS, or SAML. The default is CAS3 if not explicitly specified
   #validation-type: SAML
@@ -23,7 +25,7 @@ cas:
   #proxy-receptor-url: /proxy-callback
   #accept-any-proxy: true
 
-casLogoutUrl: https://casserver.herokuapp.com/cas/logout?service=https://mmoayyed.unicon.net:8444/
+casLogoutUrl: https://localhost:8443/cas/logout?service=https://localhost:8444/
 
 spring:
   thymeleaf:
@@ -43,7 +45,6 @@ server:
     key-store-password: changeit
   #For 'renew' param, latest Java CAS client requires that it is set as the Servlet 'context-param'. This is how to easily set it in Spring Boot
   #context-parameters.renew: true
-
 
 logging.level:
     org.jasig.cas: DEBUG
