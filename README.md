@@ -40,3 +40,18 @@ It could be used as a template to build more complex CAS-enabled Spring Boot app
 * From the command line run: `./gradlew clean bootRun`
 
 * Visit `https://localhost:8443` in the web browser of choice and enjoy the CASyfied Spring Boot app! 
+
+## Create Docker Image
+
+```bash
+./gradlew bootBuildImage
+docker push apereo/bootiful-cas-client
+```
+
+To run:
+
+```bash
+docker run --rm -p 8444:8444 --name "bootiful" \
+  --mount type=bind,source=/etc/cas/thekeystore,target=/etc/cas/thekeystore,readonly \
+  apereo/bootiful-cas-client
+```
