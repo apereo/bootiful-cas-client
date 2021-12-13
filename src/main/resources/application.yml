@@ -2,13 +2,15 @@ cas:
   #Required properties
   server-url-prefix: https://casserver.herokuapp.com/cas
   server-login-url: https://casserver.herokuapp.com/cas/login
-  client-host-url: https://localhost:8443
+
+  
+  client-host-url: https://mmoayyed.unicon.net:8444/
 
   #Optional properties
-  authentication-url-patterns: [/protected, /protected2]
-  validation-url-patterns: [/protected, /protected2]
-  #request-wrapper-url-patterns: [/protected, /protected2]
-  #assertion-thread-local-url-patterns: [/*]
+  authentication-url-patterns: [/protected, /protected2, /json]
+  validation-url-patterns: [/protected, /protected2, /json]
+  request-wrapper-url-patterns: [/protected, /protected2, /json]
+  assertion-thread-local-url-patterns: [/*]
 
   #One of CAS3, CAS, or SAML. The default is CAS3 if not explicitly specified
   #validation-type: SAML
@@ -21,7 +23,7 @@ cas:
   #proxy-receptor-url: /proxy-callback
   #accept-any-proxy: true
 
-casLogoutUrl: https://casserver.herokuapp.com/cas/logout?service=https://localhost:8443
+casLogoutUrl: https://casserver.herokuapp.com/cas/logout?service=https://mmoayyed.unicon.net:8444/
 
 spring:
   thymeleaf:
@@ -30,7 +32,7 @@ spring:
 
 #Sample embedded servlet container SSL config and session tracking mode. Change as appropriate for your local deployment environment
 server:
-  port: 8443
+  port: 8444
   session:
     cookie:
       http-only: true

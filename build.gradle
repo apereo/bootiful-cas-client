@@ -1,10 +1,10 @@
 buildscript {
     ext {
-        springBootVersion = '2.3.4.RELEASE'
+        springBootVersion = '2.6.1'
         casClientVersion = '3.6.1'
     }
     repositories {
-        jcenter()
+        gradlePluginPortal()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -31,7 +31,7 @@ targetCompatibility = 11
 
 repositories {
     mavenLocal()
-    jcenter()
+    mavenCentral()
 }
 
 
