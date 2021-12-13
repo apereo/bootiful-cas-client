@@ -23,7 +23,7 @@ dependencyManagement {
 }
 
 jar {
-    baseName = 'bootiful-cas-client-demo'
+    baseName = 'bootiful-cas-client'
     version = '1.4.0'
 }
 sourceCompatibility = 11
@@ -34,11 +34,14 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.codehaus.groovy:groovy')
     implementation("org.webjars:bootstrap:3.3.4")
     implementation("org.jasig.cas.client:cas-client-support-springboot:${casClientVersion}")
+}
+
+bootBuildImage {
+	imageName = "apereo/${project.name}"
 }
