@@ -43,3 +43,8 @@ jobs:
           distribution: 'temurin'
       - name: Build
         run: ./gradlew clean build
+      - name: Upload client build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: bootiful-cas-client
+          path: build/libs/bootiful-cas-client.jar
