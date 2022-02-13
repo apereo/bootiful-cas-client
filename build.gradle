@@ -2,6 +2,8 @@ buildscript {
     ext {
         springBootVersion = '2.6.3'
         casClientVersion = '3.6.3'
+        jaxbApiVersion ='2.3.1'
+        jaxbRuntimeVersion ='2.3.3'
     }
     repositories {
         gradlePluginPortal()
@@ -41,6 +43,8 @@ dependencies {
     implementation('org.codehaus.groovy:groovy')
     implementation("org.webjars:bootstrap:3.3.4")
     implementation("org.jasig.cas.client:cas-client-support-springboot:${casClientVersion}")
+    implementation("javax.xml.bind:jaxb-api:${jaxbApiVersion}")
+    implementation("org.glassfish.jaxb:jaxb-runtime:${jaxbRuntimeVersion}")
 }
 
 bootBuildImage {
