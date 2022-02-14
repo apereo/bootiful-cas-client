@@ -1,7 +1,9 @@
 buildscript {
     ext {
-        springBootVersion = '2.6.1'
-        casClientVersion = '3.6.3'
+        springBootVersion = '2.6.3'
+        casClientVersion = '3.6.4'
+        jaxbApiVersion ='2.3.1'
+        jaxbRuntimeVersion ='2.3.3'
     }
     repositories {
         gradlePluginPortal()
@@ -23,8 +25,8 @@ dependencyManagement {
 }
 
 jar {
-    baseName = 'bootiful-cas-client'
-    version = '1.4.0'
+    archiveBaseName.set('bootiful-cas-client')
+    archiveVersion.set('1.4.1')
 }
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -37,9 +39,12 @@ repositories {
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation('org.codehaus.groovy:groovy')
     implementation("org.webjars:bootstrap:3.3.4")
     implementation("org.jasig.cas.client:cas-client-support-springboot:${casClientVersion}")
+    implementation("javax.xml.bind:jaxb-api:${jaxbApiVersion}")
+    implementation("org.glassfish.jaxb:jaxb-runtime:${jaxbRuntimeVersion}")
 }
 
 bootBuildImage {
