@@ -2,8 +2,8 @@ cas:
   #Required properties
   server-url-prefix: https://localhost:8443/cas
   server-login-url: https://localhost:8443/cas/login
+  ssl-config-file: /etc/cas/config/sslconfig.properties
 
-  
   client-host-url: https://localhost:8444/
 
   #Optional properties
