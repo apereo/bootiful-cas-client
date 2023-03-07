@@ -1,16 +1,16 @@
 buildscript {
     ext {
-        springBootVersion = '2.6.3'
-        casClientVersion = '3.6.4'
-        jaxbApiVersion ='2.3.1'
-        jaxbRuntimeVersion ='2.3.3'
+        springBootVersion = '3.0.4'
+        casClientVersion = '4.0.1'
+        jaxbApiVersion = '4.0.0'
+        jaxbRuntimeVersion = '4.0.1'
     }
     repositories {
         gradlePluginPortal()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("io.spring.gradle:dependency-management-plugin:1.0.10.RELEASE")
+        classpath("io.spring.gradle:dependency-management-plugin:1.1.0")
     }
 }
 
@@ -19,17 +19,17 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 dependencyManagement {
-	imports {
-		mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-	}
+    imports {
+        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+    }
 }
 
 jar {
     archiveBaseName.set('bootiful-cas-client')
     archiveVersion.set('1.4.1')
 }
-sourceCompatibility = 11
-targetCompatibility = 11
+sourceCompatibility = 17
+targetCompatibility = 17
 
 repositories {
     mavenLocal()
@@ -40,13 +40,14 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation('org.codehaus.groovy:groovy')
-    implementation("org.webjars:bootstrap:3.3.4")
-    implementation("org.jasig.cas.client:cas-client-support-springboot:${casClientVersion}")
-    implementation("javax.xml.bind:jaxb-api:${jaxbApiVersion}")
-    implementation("org.glassfish.jaxb:jaxb-runtime:${jaxbRuntimeVersion}")
+    implementation('org.apache.groovy:groovy')
+    implementation('org.webjars:bootstrap:3.4.0')
+    implementation("org.apereo.cas.client:cas-client-support-springboot:${casClientVersion}")
+
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:$jaxbApiVersion")
+    implementation("com.sun.xml.ws:jaxws-rt:$jaxbRuntimeVersion")
 }
 
 bootBuildImage {
-	imageName = "apereo/${project.name}"
+    imageName = "apereo/${project.name}"
 }
