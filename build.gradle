@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '3.0.4'
+        springBootVersion = '3.0.5'
         casClientVersion = '4.0.1'
         jaxbApiVersion = '4.0.0'
         jaxbRuntimeVersion = '4.0.1'
