@@ -41,7 +41,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation('org.apache.groovy:groovy')
-    implementation('org.webjars:bootstrap:3.4.0')
+    implementation('org.webjars:bootstrap:5.2.3')
     implementation("org.apereo.cas.client:cas-client-support-springboot:${casClientVersion}")
 
     implementation("jakarta.xml.bind:jakarta.xml.bind-api:$jaxbApiVersion")
