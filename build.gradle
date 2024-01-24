@@ -1,7 +1,7 @@
 buildscript {
     ext {
-        springBootVersion = '3.0.4'
-        casClientVersion = '4.0.1'
+        springBootVersion = '3.0.13'
+        casClientVersion = '4.0.4'
         jaxbApiVersion = '4.0.0'
         jaxbRuntimeVersion = '4.0.1'
     }
@@ -10,7 +10,7 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("io.spring.gradle:dependency-management-plugin:1.1.0")
+        classpath("io.spring.gradle:dependency-management-plugin:1.1.4")
     }
 }
 

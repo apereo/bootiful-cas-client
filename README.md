@@ -6,7 +6,7 @@ It could be used as a template to build more complex CAS-enabled Spring Boot app
 
 ## Getting Started
 
-* Make sure you have Java 8 (at minimum) or Java 11 installed (it won't work on Java versions less than 8)
+* Make sure you have (at minimum) Java 11 installed (it won't work on Java versions less than 8)
 
 * Clone this repository
 
@@ -33,9 +33,7 @@ It could be used as a template to build more complex CAS-enabled Spring Boot app
      key-store-password: changeit     
  ```
  
-  > Note: you also might need to do the self-cert generation/importing dance into the JVM's trust store for this CAS client/server SSL handshake to 
-
-  work properly. 
+  > Note: you also might need to do the self-cert generation/importing dance into the JVM's trust store for this CAS client/server SSL handshake to work properly. 
 
 * From the command line run: `./gradlew clean bootRun`
 
